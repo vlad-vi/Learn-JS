@@ -12,3 +12,18 @@ l(true == '1');// true
 
 l('' == false);// true
 l(false == '');// true
+
+l('value and reference types');
+l(new String('123') == 123 ); // true
+l(new String('123') == '123' );//true
+l('123' == new String('123')); // true
+l(123 == new String('123'));  //true
+// MDN:   a == 'foo'
+// true as a and 'foo' are of different type and, the Object (a) is converted to String 'foo' before comparison
+// PROOF:
+var s = new String('abc');
+l(typeof s); // object
+l(s.valueOf());
+
+l(new String('123') == new String('123') );//false, because of different references(yes, there is a refernce and primitive types in JS)
+
